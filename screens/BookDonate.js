@@ -46,16 +46,14 @@ export default class BookDonateScreen extends Component {
         subtitle={item.reason_to_request}
         titleStyle={{ color: "black", fontWeight: "bold" }}
         rightElement={
-          <Icon
-            name={"open-in-new"}
-            type={"material-icons"}
-            size={30}
-            color={"#6fc0b8"}
-            containerStyle={{
-              width: 100,
-              alignItems: "flex-end"
-            }}
-          />
+          <TouchableOpacity style={styles.button} 
+          onPress={()=>
+            this.props.navigation.navigate("RecieverDetailScreen",{"details":item})
+          }>
+            <Text style={{color:'#ffff'}}>
+              View
+            </Text>
+          </TouchableOpacity>
         }
         bottomDivider
       />
